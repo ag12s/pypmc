@@ -28,9 +28,7 @@ def find_files(directory, pattern):
 def get_extensions():
     import numpy
 
-    extra_compile_args=["-Wno-unused-but-set-variable",
-                        "-Wno-unused-function",
-                        "-O3"]
+    extra_compile_args={'gcc': ['/Qstd=c99']}
     include_dirs = [numpy.get_include()]
 
     # Call cython if *.pyx available
